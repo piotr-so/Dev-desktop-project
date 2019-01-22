@@ -1,0 +1,26 @@
+.main-section {
+    background-image: url("./img/matrix_background.png");
+    height: 100vh;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.main-greeting {
+    color: white;
+    transform: translate(-50%, -50%);
+    padding: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.test-icon {
+    color: white;
+    font-size: 20rem;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
