@@ -1,0 +1,64 @@
+@import "../../scss_const/modules/_colors.scss";
+
+.loading-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ui-background {
+    background-image: url("./img/green_sky_background.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: $main_view_text_color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ui-top-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 3rem 0 3rem;
+    padding-top: 2rem;
+    
+    & >div {
+        &:first-child {
+            font-size: 4rem;
+        }
+    }
+}
+
+.dev-jokes {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 3rem 3rem 3rem;
+
+    img {
+        object-fit: contain;
+        height: 20rem;
+    }
+
+    & >div {
+        &:nth-of-type(1) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        &>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 7rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 1.2rem;
+            padding: 0 0.5rem 0 0.5rem;
+            margin-left: 1rem;
+        }
+    }
+}

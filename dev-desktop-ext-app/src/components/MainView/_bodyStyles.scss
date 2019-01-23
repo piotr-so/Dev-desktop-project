@@ -1,26 +1,83 @@
+@import "../../scss_const/modules/_colors.scss";
+
+.main-underlay {
+    background-color: black;
+    height: 100vh;;
+}
+
 .main-section {
     background-image: url("./img/matrix_background.png");
+    background-size: cover;
     height: 100vh;
     filter: blur(3px);
-    -webkit-filter: blur(3px);
+    // commenting this fragment for development purposes
+    // animation: background-slide 10s infinite linear;
+
+}
+
+@keyframes background-slide {
+    0% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-y: 2127px;
+    }
+}
+
+.greeting-anchor {
+    height: 30rem;
+    width: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.greeting-span-icon-anchor {
+    height: inherit;
+    width: inherit;
+    position: relative;
 }
 
 .main-greeting {
-    color: white;
-    transform: translate(-50%, -50%);
-    padding: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     text-align: center;
+    position: absolute;
+    color: $main_view_text_color;
+    top: 45%;
+    left: 42%;
 }
 
 .test-icon {
-    color: white;
+    color: $main_view_text_color;
     font-size: 20rem;
-    opacity: 0.5;
+    opacity: 0.2;
+    position: absolute;
+    top: 15%;
+    left: 19%;
+
+    animation: iconspin 10s infinite linear;
+}
+
+@keyframes iconspin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.forwarding-span {
+    color: $main_view_text_color;
+    font-size: 1.2rem;
+    border: 5px solid rgba(78, 154, 6, 0.05);
+    padding: 0.5rem;
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 50%;
+    bottom: 0rem;
     left: 50%;
+    &:hover {
+        cursor: pointer;
+        border: 5px solid rgba(78, 154, 6, 1);
+    }
 }

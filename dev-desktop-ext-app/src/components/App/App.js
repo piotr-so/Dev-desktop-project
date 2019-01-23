@@ -3,9 +3,9 @@ import './App.css';
 import MainView from "../MainView/MainView";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleNotch} from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faHome, faGlobeAmericas, faCode, faSpinner} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCircleNotch)
+library.add(faCircleNotch, faHome, faGlobeAmericas, faCode, faSpinner)
 
 class App extends Component {
   render() {
