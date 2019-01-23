@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Clock from "../Clock/Clock";
 import Navbar from "../Navbar/Navbar";
+import WorldNews from "../WorldNews/WorldNews"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./_UiOverviewStyles.scss";
 
@@ -9,6 +10,7 @@ class DevUiOverview extends Component {
         super(props);
         this.state = {
             jokeArray: [],
+            PageToRender: 3,
             canRender: false
         }
     }
@@ -34,9 +36,9 @@ class DevUiOverview extends Component {
     }
 
     render() {
-        const { jokeArray, canRender } = this.state;
+        const { jokeArray, PageToRender, canRender } = this.state;
 
-        if (canRender) {
+        if (canRender && PageToRender !== 3) {
             let itemToRender = Math.floor(Math.random() * (10 - 1) + 1);
             // console.log(itemToRender)
             return (
@@ -60,11 +62,14 @@ class DevUiOverview extends Component {
                 </div>
             )
         }
+        else if (PageToRender === 3) {
+            return <WorldNews />
+        }
         else {
             return (
                 <div className="ui-background">
-                    <h1 className="loading-placeholder">Loading <FontAwesomeIcon icon="spinner"/></h1>
-                    
+                    <h1 className="loading-placeholder">Loading <FontAwesomeIcon icon="spinner" /></h1>
+
                 </div>
 
             )

@@ -1,18 +1,20 @@
 .navigation-bar {
-    font-size: 4rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: center;
-    background-color: black;
+    color: rgba(255, 255, 255, 0.8);
+    // background-color: black;
     
     svg {
-        padding: 0.5rem;
+        padding: 1rem;
         margin: 0.5rem;
         border: 0.2rem solid rgba(255, 255, 255, 0.514);
+        background-color: rgba(0, 0, 0, 0.3);
 
         &:hover {
             cursor: pointer;
-            color: green;
-            border-color: green;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: rgba(255, 255, 255, 1);
         }
     }
 }
