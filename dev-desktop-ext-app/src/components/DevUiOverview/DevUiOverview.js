@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Clock from "../Clock/Clock";
+import WeatherWidget from "../WeatherWidget/WeatherWidget";
 import Navbar from "../Navbar/Navbar";
 import WorldNews from "../WorldNews/WorldNews"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HashRouter, Route, Link, Switch, NavLink } from "react-router-dom";
+
 import "./_UiOverviewStyles.scss";
 
 class DevUiOverview extends Component {
@@ -10,7 +13,7 @@ class DevUiOverview extends Component {
         super(props);
         this.state = {
             jokeArray: [],
-            PageToRender: 3,
+            weatherObj: [],
             canRender: false
         }
     }
@@ -38,7 +41,7 @@ class DevUiOverview extends Component {
     render() {
         const { jokeArray, PageToRender, canRender } = this.state;
 
-        if (canRender && PageToRender !== 3) {
+        if (canRender) {
             let itemToRender = Math.floor(Math.random() * (10 - 1) + 1);
             // console.log(itemToRender)
             return (
@@ -49,21 +52,20 @@ class DevUiOverview extends Component {
                     </div>
                     <div className="dev-jokes">
                         <div>
-                            <img src={require("../DevUiOverview/img/like_sir.png")} alt="like_sir" />
+                            <img src={require("../DevUiOverview/img/like_sir.png")} className="sir" alt="like_sir" />
                             <div>
                                 <div>JOKE OF THE DAY:</div>
                                 <div>{"- " + jokeArray[itemToRender].setup}</div>
                                 <div>{jokeArray[itemToRender].punchline}</div>
                             </div>
                         </div>
-                        <div>Widget pogodowy (work in progress)</div>
+                        <WeatherWidget />
                     </div>
+
+
                     <div className="navigation-bar"><Navbar /></div>
                 </div>
             )
-        }
-        else if (PageToRender === 3) {
-            return <WorldNews />
         }
         else {
             return (

@@ -37,11 +37,13 @@
     justify-content: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 3rem 3rem 3rem;
+    margin: 0 3rem 0 3rem;
 
     img {
-        object-fit: contain;
-        height: 20rem;
+        &.sir {
+            object-fit: contain;
+            height: 20rem;
+        }
     }
 
     & >div {
@@ -49,16 +51,20 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            margin-left: 5rem;
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 30rem;
+                height: auto;
+                font-size: 1.2rem;
+                background-color: rgba(0, 0, 0, 0.6);
+                padding: 0 0.5rem 0 0.5rem;
+                margin-left: 1rem;
+            }
         }
-        &>div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 7rem;
-            background-color: rgba(0, 0, 0, 0.3);
-            font-size: 1.2rem;
-            padding: 0 0.5rem 0 0.5rem;
-            margin-left: 1rem;
-        }
+        
     }
 }

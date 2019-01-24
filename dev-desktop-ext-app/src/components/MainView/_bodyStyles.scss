@@ -1,5 +1,13 @@
 @import "../../scss_const/modules/_colors.scss";
 
+a {
+    text-decoration: none;
+    &:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
 .main-underlay {
     background-color: black;
     height: 100vh;;

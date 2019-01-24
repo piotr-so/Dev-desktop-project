@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from "../Navbar/Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "../DevUiOverview/_UiOverviewStyles.scss";
 import "./_WorldNews.scss";
+
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 class WorldNews extends Component {
@@ -10,8 +12,8 @@ class WorldNews extends Component {
         this.state = {
             newsObj: '',
             canRender: false,
-            focusedElem: null
-            
+            focusedElem: 0
+
         }
     }
 
@@ -36,15 +38,15 @@ class WorldNews extends Component {
     }
 
     handleNewsClick = sourceId => {
-        console.log("to jest sourceID: "+sourceId)
+        console.log("to jest sourceID: " + sourceId)
         this.setState({
             focusedElem: sourceId,
-            
+
         })
     }
 
     isActive = elemId => {
-        if(elemId === this.state.focusedElem) {
+        if (elemId === this.state.focusedElem) {
             return 'active'
         }
         else {
@@ -68,7 +70,7 @@ class WorldNews extends Component {
                                     return (
                                         <li key={index} className={this.isActive(index)} onClick={() => this.handleNewsClick(index)}>
                                             <p>{news.title}</p>
-                                            <span><FontAwesomeIcon icon={faClock}/>{" "}{news.publishedAt.substring(11, 16)}</span>
+                                            <span><FontAwesomeIcon icon={faClock} />{" "}{news.publishedAt.substring(11, 16)}</span>
                                         </li>
                                     )
                                 })}
@@ -90,7 +92,12 @@ class WorldNews extends Component {
             );
         }
         else {
-            return <h1>Loading...</h1>
+            return (
+                <div className="ui-background">
+                    <h1 className="loading-placeholder">Loading <FontAwesomeIcon icon="spinner" /></h1>
+
+                </div>
+            )
         }
     }
 }

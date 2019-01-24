@@ -1,13 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from "react-router-dom";
 import "./_Navbar.scss";
 
 class Navbar extends Component {
     render() {
         return (
             <Fragment>
-                <FontAwesomeIcon icon="home" />
-                <FontAwesomeIcon icon="globe-americas" />
+                <Link to="/devUiOverview">
+                    <FontAwesomeIcon icon="home" />
+                </Link>
+                <Link to="/WorldNews">
+                    <FontAwesomeIcon icon="globe-americas" />
+                </Link>
                 <FontAwesomeIcon icon="code" />
             </Fragment>
         );
