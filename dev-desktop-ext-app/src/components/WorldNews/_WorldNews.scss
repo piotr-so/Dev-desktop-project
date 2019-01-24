@@ -1,6 +1,6 @@
 .active {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    border: 1px dashed rgba(255, 255, 255, 0.5);
+    border-left: 0.5rem solid rgba(78, 154, 6, 1);
+    font-weight: bold;
 }
 
 .hidden {
@@ -11,6 +11,12 @@
     visibility: visible;
 }
 
+.news-top-section {
+    font-size: 4rem;
+    margin: 0 3rem 0 3rem;
+    padding-top: 2rem;
+}
+
 .news-list-container {
     overflow-y: scroll;
     &::-webkit-scrollbar { 
@@ -18,23 +24,28 @@
     }
     position: relative;
 
+    &:after {
+        content: "^";
+        position: fixed;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0);
+        bottom: 160px;
+        transform: rotate(180deg);
+        transition: all 1s;
+    }
     &:hover {
         &:after {
-            content: "^";
-            position: fixed;
-            font-size: 4rem;
             color: rgba(255, 255, 255, 0.5);
-            bottom: 95px;
-            transform: rotate(180deg);
-        }
+            bottom: 95px; 
+        }   
     }
 }
 
 .news-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    max-height: 31rem;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
 
     .news-list {
         margin: 0;
@@ -43,8 +54,13 @@
             cursor: pointer;
             list-style-type: none;
             max-width: 20rem;
-            margin-top: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.3);
+            margin: 0 1rem 0.5rem 0;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            &:hover {
+                font-weight: bold;
+            }
             
             p {
                 margin: 0.5rem;
@@ -60,19 +76,36 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        max-width: 20rem;
-        background-color: rgba(0, 0, 0, 0.3);
+        max-width: 40rem;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        &> div {
+            padding: 0 1rem 0 1rem;
+        }
 
         h2 {
             line-height: 1.5rem;
         }
         img {
-            max-width: 20rem;
-            max-height: 20rem;
-            object-fit: contain;
+            max-width: 100%;
+            max-height: 50%;
+            object-fit: cover;
         }
         button {
             cursor: pointer;
+            color: white;
+            font-size: 1rem;
+            background-color: black;
+            border: none;
+            border-radius: 4%;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            transition-property: background-color;
+            transition-duration: 1s; 
+
+            &:hover {
+               background-color: rgba(78, 154, 6, 1);
+            }
         }
     }
 }

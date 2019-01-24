@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from "../Navbar/Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./_WorldNews.scss";
+import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 class WorldNews extends Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class WorldNews extends Component {
         this.state = {
             newsObj: '',
             canRender: false,
-            focusedElem: null,
-            hiddenElem: "hidden"
+            focusedElem: null
+            
         }
     }
 
@@ -38,7 +39,7 @@ class WorldNews extends Component {
         console.log("to jest sourceID: "+sourceId)
         this.setState({
             focusedElem: sourceId,
-            hiddenElem: "shown"
+            
         })
     }
 
@@ -59,7 +60,7 @@ class WorldNews extends Component {
             const elemIdToRender = newsObjectsMap[Number(this.state.focusedElem)]
             return (
                 <div className="ui-background">
-                    <div><h1>Latest news around the world</h1></div>
+                    <div className="news-top-section">Latest news around the world</div>
                     <div className="news-section">
                         <div className="news-list-container">
                             <ul className="news-list">
@@ -67,13 +68,13 @@ class WorldNews extends Component {
                                     return (
                                         <li key={index} className={this.isActive(index)} onClick={() => this.handleNewsClick(index)}>
                                             <p>{news.title}</p>
-                                            {news.author === null ? null : <span> by {news.author}</span>}
+                                            <span><FontAwesomeIcon icon={faClock}/>{" "}{news.publishedAt.substring(11, 16)}</span>
                                         </li>
                                     )
                                 })}
                             </ul>
                         </div>
-                        <div className={this.state.hiddenElem === "hidden" ? "news-preview hidden" : "news-preview shown"}>
+                        <div className="news-preview">
                             <img src={elemIdToRender.urlToImage} alt={elemIdToRender.source.name} />
                             <div>
                                 <h4>{"by " + elemIdToRender.source.name}</h4>
