@@ -84,7 +84,7 @@ class DevJobs extends Component {
                         </div>
                     </div>
                     <div>
-                        <ul>
+                        <ul className="jobs-list">
                             {filteredOffers.map((jobItem) => {
                                 return (
                                     <a key={"a" + jobItem.id} href={jobItem.url}>

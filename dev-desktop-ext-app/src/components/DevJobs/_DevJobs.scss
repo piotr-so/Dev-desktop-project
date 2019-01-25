@@ -30,7 +30,7 @@
     }    
 }
 
-ul {
+.jobs-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -52,14 +52,15 @@ ul {
         background-color: rgba(104, 104, 104, 0.747);
         border-radius: 1rem;
     }
-}
 
-a {
-    text-decoration: none;
-
-    &:visited {
+    a {
         text-decoration: none;
+    
+        &:visited {
+            text-decoration: none;
+        }
     }
+
 }
 
 .job-box {
