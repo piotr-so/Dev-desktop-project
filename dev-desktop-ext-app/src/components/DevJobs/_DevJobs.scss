@@ -1,3 +1,6 @@
+$mobile: "screen and (max-width: 1100px)";
+$desktop: "screen and (min-width: 1101px)";
+
 .searchbar-container {
 
     .relative-container {
@@ -6,6 +9,9 @@
         margin: 0 auto;
         .search-input {
             min-width: 20rem;
+            @media #{$mobile} {
+                min-width: 17rem;
+            }
             padding: 0.75rem 1.5rem 0.75rem 1.5rem;
             border-style: none;
             border-radius: 2rem;
@@ -19,6 +25,9 @@
             outline: none;
             font-size: 1.1rem;
             right: -2rem;
+            @media #{$mobile} {
+                right: 1rem;
+            }
             top: 0;
             bottom: 0;
             position: absolute;
@@ -38,6 +47,12 @@
     max-height: 20rem;
     padding-left: 0;
     margin: 0 5rem 0 5rem;
+
+    @media #{$mobile} {
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
+    }
 
     &::-webkit-scrollbar {
         width: 1em;

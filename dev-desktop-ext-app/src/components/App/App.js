@@ -10,7 +10,7 @@ import {
   faSearch, faAngleRight
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { HashRouter, Route, Link, Switch, NavLink } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 library.add(faCircleNotch, faHome, faGlobeAmericas, faCode, faSpinner, faClock, faThermometerHalf, faWind, faTint, faCompressArrowsAlt, faSearch,
   faAngleRight)

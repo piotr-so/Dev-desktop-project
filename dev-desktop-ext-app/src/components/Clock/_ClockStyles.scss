@@ -1,3 +1,6 @@
+$mobile: "screen and (max-width: 1100px)";
+$desktop: "screen and (min-width: 1101px)";
+
 .clock-styles {
     div {
         &:nth-of-type(1) {
@@ -5,6 +8,9 @@
         }
         &:nth-of-type(2) {
             text-align: end;
+            @media #{$mobile} {
+                text-align: center;
+            }
             padding-right: 0.5rem;
         }
     }

@@ -35,7 +35,7 @@ class WeatherWidget extends Component {
             return (
                 <div className="weather-widget-container">
                     <div className="weather-state">
-                        <img src={weatherObj.current.condition.icon} className="weather-icon" />
+                        <img src={weatherObj.current.condition.icon} className="weather-icon" alt={weatherObj.current.condition.text} />
                         <p className="weather-location">{weatherObj.location.name}</p>
                         <p>{weatherObj.current.condition.text}</p>
                     </div>

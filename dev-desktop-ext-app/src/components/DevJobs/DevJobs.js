@@ -66,7 +66,7 @@ class DevJobs extends Component {
         const { filteredOffers, canRender } = this.state;
         if (canRender) {
             return (
-                <div className="ui-background">
+                <div className="ui-background background-fix">
                     <div className="ui-top-section">
                         <div>New job offers, right below!</div>
                     </div>

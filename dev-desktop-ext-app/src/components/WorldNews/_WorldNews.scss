@@ -1,3 +1,6 @@
+$mobile: "screen and (max-width: 1100px)";
+$desktop: "screen and (min-width: 1101px)";
+
 .active {
     border-left: 0.5rem solid rgba(78, 154, 6, 1);
     font-weight: bold;
@@ -22,6 +25,12 @@
     &::-webkit-scrollbar { 
         display: none; 
     }
+    @media #{$mobile} {
+        height: 20rem;
+        &::-webkit-scrollbar { 
+            display: none; 
+        }
+    }
     position: relative;
 
     &:after {
@@ -44,6 +53,12 @@
 .news-section {
     display: flex;
     flex-wrap: wrap;
+    @media #{$mobile} {
+        flex-direction: column-reverse;
+    }
+    @media #{$desktop} {
+        height: 29rem;
+    }
     justify-content: center;
     margin: 1rem 0 1rem 0;
 
@@ -76,8 +91,16 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        max-width: 40rem;
-        min-width: 40rem;
+        @media #{$desktop} {
+            max-width: 40rem;
+            min-width: 40rem;
+        }
+        @media #{$mobile} {
+            margin-bottom: 1rem;
+            position: sticky;
+            top: 0;
+            height: 25rem;
+        }
         background-color: rgba(0, 0, 0, 0.8);
 
         &> div {
@@ -88,6 +111,11 @@
         img {
             max-width: 100%;
             max-height: 50%;
+            @media #{$mobile} {
+                max-width: 65%;
+                margin: 0 auto;
+                max-height: 9rem;
+            }
             object-fit: cover;
         }
 

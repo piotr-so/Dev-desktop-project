@@ -9,14 +9,15 @@ class MainView extends Component {
         return (
             <div className="main-underlay">
                 <div className="main-section"></div>
-                <div className="greeting-anchor">
-
-                    <div className="greeting-span-icon-anchor">
-                        <FontAwesomeIcon icon="circle-notch" className="test-icon" />
-                        <span className="main-greeting">Welcome back</span>
+                <div className="content-wrapper">
+                    <div className="greeting-anchor">
+                        <div className="greeting-span-icon-anchor">
+                            <FontAwesomeIcon icon="circle-notch" className="test-icon" />
+                            <span className="main-greeting">There is no spoon</span>
+                        </div>
                     </div>
+                    <span className="forwarding-span"><Link to="/devUiOverview">Let's begin</Link></span>
                 </div>
-                <span className="forwarding-span"><Link to="/devUiOverview">Let's begin</Link></span>
             </div>
         )
     }
