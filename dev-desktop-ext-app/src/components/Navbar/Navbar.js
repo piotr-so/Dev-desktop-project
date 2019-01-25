@@ -8,12 +8,14 @@ class Navbar extends Component {
         return (
             <Fragment>
                 <Link to="/devUiOverview">
-                    <FontAwesomeIcon icon="home" />
+                    <FontAwesomeIcon icon="home" className={this.props.activeState === 1 ? "nav-active" : "nav-not-Active"}/>
                 </Link>
                 <Link to="/WorldNews">
-                    <FontAwesomeIcon icon="globe-americas" />
+                    <FontAwesomeIcon icon="globe-americas" className={this.props.activeState === 2 ? "nav-active" : "nav-not-Active"} />
                 </Link>
-                <FontAwesomeIcon icon="code" />
+                <Link to="/DevJobs" >
+                    <FontAwesomeIcon icon="code" className={this.props.activeState === 3 ? "nav-active" : "nav-not-Active"} />
+                </Link>
             </Fragment>
         );
     }

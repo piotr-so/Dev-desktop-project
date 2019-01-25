@@ -1,0 +1,115 @@
+.searchbar-container {
+
+    .relative-container {
+        position: relative;
+        max-width: 20rem;
+        margin: 0 auto;
+        .search-input {
+            min-width: 20rem;
+            padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+            border-style: none;
+            border-radius: 2rem;
+            outline: none;
+        }
+    
+        button {
+            cursor: pointer;
+            background: transparent;
+            border: transparent;
+            outline: none;
+            font-size: 1.1rem;
+            right: -2rem;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+
+            &:hover {
+                color: green;
+            }
+        }
+    }    
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    max-height: 20rem;
+    padding-left: 0;
+    margin: 0 5rem 0 5rem;
+
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    &::-webkit-scrollbar-track {
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 1rem;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(104, 104, 104, 0.747);
+        border-radius: 1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+.job-box {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    max-width: 14rem;
+    min-width: 14rem;
+    max-height: 8rem;
+    min-height: 8rem;
+    color: gray;
+    background-color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+
+    &:hover {
+        &:after {
+            content: "";
+            position: absolute;
+            width: 15rem;
+            height: 0.3rem;
+            background-color:rgba(78, 154, 6, 1);
+            bottom: 0;
+            left: 0;
+        }
+        
+    }
+
+    img {
+        max-width: 5rem;
+        min-height: 5rem;
+        object-fit: contain;
+    }
+
+    p {
+        font-size: 0.8rem;
+        padding-left: 0.2rem;
+        margin: 0 0 0 0.5rem;
+
+        &:nth-of-type(1) {
+            font-weight: bold;
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        &:nth-of-type(2) {
+            margin-bottom: 0.2rem;
+        }
+    }
+}
+
+

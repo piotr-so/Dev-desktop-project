@@ -12,6 +12,7 @@ class DevUiOverview extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            activeState: 1,
             jokeArray: [],
             weatherObj: [],
             canRender: false
@@ -63,7 +64,7 @@ class DevUiOverview extends Component {
                     </div>
 
 
-                    <div className="navigation-bar"><Navbar /></div>
+                    <div className="navigation-bar"><Navbar activeState={this.state.activeState}/></div>
                 </div>
             )
         }

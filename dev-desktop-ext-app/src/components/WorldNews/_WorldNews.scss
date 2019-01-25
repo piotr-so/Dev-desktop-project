@@ -77,29 +77,40 @@
         flex-direction: column;
         justify-content: flex-start;
         max-width: 40rem;
+        min-width: 40rem;
         background-color: rgba(0, 0, 0, 0.8);
 
         &> div {
             padding: 0 1rem 0 1rem;
         }
 
-        h2 {
-            line-height: 1.5rem;
-        }
+        
         img {
             max-width: 100%;
             max-height: 50%;
             object-fit: cover;
         }
+
+        h2 {
+            line-height: 1.5rem;
+        }
+
+        p {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* autoprefixer: ignore next */
+            -webkit-box-orient: vertical;
+        }
+
         button {
             cursor: pointer;
             color: white;
             font-size: 1rem;
             background-color: black;
             border: none;
-            border-radius: 4%;
+            border-radius: 0.5rem;
             padding: 0.5rem;
-            margin-top: 1rem;
             transition-property: background-color;
             transition-duration: 1s; 
 

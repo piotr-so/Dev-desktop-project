@@ -10,6 +10,7 @@ class WorldNews extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            activeState: 2,
             newsObj: '',
             canRender: false,
             focusedElem: 0
@@ -82,12 +83,12 @@ class WorldNews extends Component {
                                 <h4>{"by " + elemIdToRender.source.name}</h4>
                                 <h2>{elemIdToRender.title}</h2>
                                 <p>{elemIdToRender.description}</p>
-                                <a href={elemIdToRender.url}><button>Read more</button></a>
+                                <a href={elemIdToRender.url}><button>Read more <FontAwesomeIcon icon="angle-right"/></button></a>
                             </div>
 
                         </div>
                     </div>
-                    <div className="navigation-bar"><Navbar /></div>
+                    <div className="navigation-bar"><Navbar activeState={this.state.activeState}/></div>
                 </div>
             );
         }
